@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:id="@+id/comment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Try to Write you thoughts. Apni Kawi ki Kalpana istamal karey janab"
+        android:id="@+id/tvComment"
+        android:layout_gravity="center_horizontal"
+        android:padding="50dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etComment"
+        android:layout_weight="0.41"
+        android:hint="We are the people who sleep in the day and work in the night. We are technical idiots who to explore a few things just for a stupid party."
+        android:padding="60dp" />
+</LinearLayout>
