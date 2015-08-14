@@ -21,4 +21,11 @@
         android:layout_weight="0.41"
         android:hint="We are the people who sleep in the day and work in the night. We are technical idiots who to explore a few things just for a stupid party."
         android:padding="60dp" />
+
+    <Button
+        android:id="@+id/btnSubmitResponse"
+        android:text="Submit"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

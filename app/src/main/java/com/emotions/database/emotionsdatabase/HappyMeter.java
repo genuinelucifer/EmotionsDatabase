@@ -1,8 +1,8 @@
 package com.emotions.database.emotionsdatabase;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -10,7 +10,7 @@ import android.widget.SeekBar;
 /**
  * Created by Abhinav Tripathi on 14-Aug-15.
  */
-public class HappyMeter extends Activity {
+public class HappyMeter extends AppCompatActivity {
 
     SeekBar sbHappiness, sbSleepiness;
     Button next;
@@ -23,11 +23,11 @@ public class HappyMeter extends Activity {
         sbHappiness = (SeekBar) findViewById(R.id.sbHappiness);
         sbSleepiness = (SeekBar) findViewById(R.id.sbSleepiness);
 
-        //sbHappiness.setProgress(0);
+        sbHappiness.setProgress(0);
         Utilities.setHappiness(0);
-        //sbSleepiness.setProgress(0);
+        sbSleepiness.setProgress(0);
         Utilities.setSleepiness(0);
-/*
+
         sbHappiness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -61,7 +61,7 @@ public class HappyMeter extends Activity {
                 Utilities.setSleepiness(sbSleepiness.getProgress());
             }
         });
-*/
+
         next = (Button) findViewById(R.id.btnNextHappy);
         next.setOnClickListener(new View.OnClickListener() {
             @Override

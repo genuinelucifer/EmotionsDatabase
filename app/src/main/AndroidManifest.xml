@@ -20,6 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HappyMeter"
+            android:label="Happy Meter" >
+        </activity>
+        <activity
+            android:name=".EngageMedia"
+            android:label="Engagement" >
+        </activity>
+        <activity
+            android:name=".Comment"
+            android:label="Comment" >
+        </activity>
+
     </application>
 
 </manifest>
