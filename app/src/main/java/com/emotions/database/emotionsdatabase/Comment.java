@@ -1,26 +1,23 @@
 package com.emotions.database.emotionsdatabase;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 
 /**
  * Created by Abhinav Tripathi on 14-Aug-15.
  */
-public class Comment extends Fragment {
+public class Comment  extends AppCompatActivity {
     EditText etComment;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.comment);
 
-        View android = inflater.inflate(R.layout.comment, container, false);
-        etComment = (EditText) android.findViewById(R.id.etComment);
+        etComment = (EditText) findViewById(R.id.etComment);
         etComment.setText("");
         Utilities.setComment("");
         etComment.addTextChangedListener(new TextWatcher() {
@@ -39,7 +36,5 @@ public class Comment extends Fragment {
                 Utilities.setComment(etComment.getText().toString());
             }
         });
-
-        return android;
     }
 }

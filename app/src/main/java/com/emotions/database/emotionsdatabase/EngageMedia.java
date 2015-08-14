@@ -1,30 +1,30 @@
 package com.emotions.database.emotionsdatabase;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioGroup;
 
 /**
  * Created by Abhinav Tripathi on 14-Aug-15.
  */
-public class EngageMedia extends Fragment {
+public class EngageMedia extends AppCompatActivity {
     RadioGroup rgNumMedia;
+    Button next;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.engagemedia);
 
-        View android = inflater.inflate(R.layout.engagemedia, container, false);
-        rgNumMedia = (RadioGroup) android.findViewById(R.id.rgNumMedia);
+        rgNumMedia = (RadioGroup) findViewById(R.id.rgNumMedia);
         Utilities.setNumEngagements(0);
         rgNumMedia.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId)
-                {
+                switch (checkedId) {
                     case R.id.rbZero:
                         Utilities.setNumEngagements(0);
                         break;
@@ -46,6 +46,13 @@ public class EngageMedia extends Fragment {
             }
         });
 
-        return android;
+        next = (Button) findViewById(R.id.btnNextEngage);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(EngageMedia.this, Comment.class);
+                startActivity(i);
+            }
+        });
     }
 }
