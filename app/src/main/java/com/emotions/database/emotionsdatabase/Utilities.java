@@ -1,5 +1,9 @@
 package com.emotions.database.emotionsdatabase;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 /**
  * Created by Abhinav Tripathi on 14-Aug-15.
  */
@@ -9,10 +13,7 @@ public class Utilities {
     private static int sleepiness = 0;
     private static int numEngagements = 0;
 
-    public static void setComment(String str)
-    {
-        comment = str;
-    }
+    public static void setComment(String str) { comment = str; }
     public static String getComment()
     {
         return comment;
@@ -43,5 +44,12 @@ public class Utilities {
     public static int getNumEngagements()
     {
         return numEngagements;
+    }
+
+    public static boolean isNetworkAvailable(Context ctx)
+    {
+        ConnectivityManager ctvMngr = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo aNetInfo = ctvMngr.getActiveNetworkInfo();
+        return aNetInfo != null && aNetInfo.isAvailable();
     }
 }
