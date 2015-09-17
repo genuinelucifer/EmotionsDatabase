@@ -3,4 +3,10 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="strTitle">AFFECTIVE MEDIA\nLANDSCAPE SURVEY</string>
+    <string name="strWelcome">WELCOME to the portal</string>
+    <string name="strStart">Press START to continue</string>
+    <string name="title_activity_media_list">Media List</string>
+    <string name="title_activity_thanks">Thank You</string>
 </resources>

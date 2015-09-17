@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 
 /**
  * Created by Abhinav Tripathi on 14-Aug-15.
+ * Edited on 17-Sep-15.
  */
 public class EngageMedia extends AppCompatActivity {
     RadioGroup rgNumMedia;
@@ -50,7 +51,7 @@ public class EngageMedia extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(EngageMedia.this, Comment.class);
+                Intent i = new Intent(EngageMedia.this, ThankYou.class);
                 startActivity(i);
             }
         });

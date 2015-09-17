@@ -34,7 +34,14 @@
             android:name=".Comment"
             android:label="Comment" >
         </activity>
-
+        <activity
+            android:name=".MediaList"
+            android:label="@string/title_activity_media_list" >
+        </activity>
+        <activity
+            android:name=".ThankYou"
+            android:label="@string/title_activity_thanks" >
+        </activity>
     </application>
 
 </manifest>
