@@ -18,7 +18,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etComment"
-        android:layout_weight="0.41"
         android:hint="We are the people who sleep in the day and work in the night. We are technical idiots who to explore a few things just for a stupid party."
         android:padding="60dp" />
 

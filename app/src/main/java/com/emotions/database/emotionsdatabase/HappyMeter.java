@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Toast;
 import android.widget.VerticalSeekBar;
 
 /**
@@ -41,6 +42,7 @@ public class HappyMeter extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 Utilities.setHappiness(sbHappiness.getProgress() + 1);
+                //Toast.makeText(HappyMeter.this, "The meter Read: "+ sbHappiness.getProgress(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -58,6 +60,7 @@ public class HappyMeter extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 Utilities.setSleepiness(sbSleepiness.getProgress() + 1);
+                //Toast.makeText(HappyMeter.this, "The meter Read: "+ sbSleepiness.getProgress(), Toast.LENGTH_SHORT).show();
             }
         });
 

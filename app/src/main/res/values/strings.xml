@@ -9,4 +9,7 @@
     <string name="strStart">Press START to continue</string>
     <string name="title_activity_media_list">Media List</string>
     <string name="title_activity_thanks">Thank You</string>
+    <string name="no_internet_msg">Internet connection could not be established. \nPlease verify that you are connected through an active connection.</string>
+    <string name="no_internet_title">Could NOT connect!</string>
+
 </resources>

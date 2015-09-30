@@ -7,20 +7,32 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 public class MediaList extends AppCompatActivity {
 
     Button next;
+    CheckBox cbAll[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_list);
 
+        cbAll = new CheckBox[Utilities.NUM_MEDIA_LIST];
+        for(int i=0;i<Utilities.NUM_MEDIA_LIST; ++i)
+        {
+            cbAll[i] = (CheckBox) findViewById(Utilities.cbIDs[i]);
+        }
+
         next = (Button) findViewById(R.id.btnNextMediaList);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for(int i=0;i<Utilities.NUM_MEDIA_LIST; ++i)
+                {
+                    Utilities.checkBoxesCheckedState[i] = cbAll[i].isChecked();
+                }
                 Intent i = new Intent(MediaList.this, EngageMedia.class);
                 startActivity(i);
             }
