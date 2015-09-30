@@ -42,6 +42,15 @@
             android:name=".ThankYou"
             android:label="@string/title_activity_thanks" >
         </activity>
+
+        <receiver
+            android:name=".AlarmClass"
+            android:process=":remote" />
+
+        <activity
+            android:name=".NumAlarms"
+            android:label="@string/title_activity_num_alarms" >
+        </activity>
     </application>
 
 </manifest>

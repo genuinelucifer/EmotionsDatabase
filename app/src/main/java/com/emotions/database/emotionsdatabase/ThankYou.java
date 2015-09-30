@@ -107,6 +107,7 @@ public class ThankYou extends AppCompatActivity {
             Log.d(TAG, "Waiting for... Location NOT NULL!");
             while (lastLocation==null);
             Log.d(TAG, "Location NOT NULL!");
+
             if(lastLocation != null)
             {
                 lat = lastLocation.getLatitude();
@@ -158,7 +159,7 @@ public class ThankYou extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_thanks, menu);
+        getMenuInflater().inflate(R.menu.menu_common, menu);
         return true;
     }
 
@@ -170,7 +171,7 @@ public class ThankYou extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_SetAlarm) {
             return true;
         }
 

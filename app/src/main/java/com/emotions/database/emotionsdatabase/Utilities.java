@@ -5,6 +5,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
+ * Some Utility functions and also a common point to coordinate data transfer between activities
+ *
  * Created by Abhinav Tripathi on 14-Aug-15.
  */
 public class Utilities {
@@ -78,4 +80,6 @@ public class Utilities {
         NetworkInfo aNetInfo = ctvMngr.getActiveNetworkInfo();
         return aNetInfo != null && aNetInfo.isAvailable();
     }
+
+
 }
