@@ -90,7 +90,7 @@ public class Utilities {
     public static int getPrefInt(Context ctx, String prefKey)
     {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ctx.getApplicationContext());
-        return sp.getInt(prefKey, -1);
+        return sp.getInt(prefKey, 0);
     }
     public static void savePrefInt(Context ctx, String prefKey, int prefValue)
     {

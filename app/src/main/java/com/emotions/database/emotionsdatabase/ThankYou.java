@@ -19,12 +19,9 @@ import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.SaveCallback;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
-import bolts.Task;
 
 public class ThankYou extends AppCompatActivity {
 

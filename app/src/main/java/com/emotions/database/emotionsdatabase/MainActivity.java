@@ -50,3 +50,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
+/*
+You want to call android.telephony.TelephonyManager.getDeviceId().
+
+This will return whatever string uniquely identifies the device (IMEI on GSM, MEID for CDMA).
+
+You'll need the following permission in your AndroidManifest.xml:
+
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+in order to do this.
+ */
