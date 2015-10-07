@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name='android.permission.WAKE_LOCK'/>
+
 
     <application
         android:name=".EmotionsDatabaseApplication"
@@ -43,14 +45,16 @@
             android:label="@string/title_activity_thanks" >
         </activity>
 
-        <receiver
-            android:name=".AlarmClass"
-            android:process=":remote" />
+        <service android:name=".MyAlarmService"
+            android:enabled="true" />
+
+        <receiver android:name=".AlarmClass"/>
 
         <activity
             android:name=".NumAlarms"
             android:label="@string/title_activity_num_alarms" >
         </activity>
+
     </application>
 
 </manifest>

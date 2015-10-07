@@ -75,6 +75,8 @@ public class EngageMedia extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_SetAlarm) {
+            Intent i = new Intent(EngageMedia.this, NumAlarms.class);
+            startActivity(i);
             return true;
         }
 

@@ -94,6 +94,8 @@ public class HappyMeter extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_SetAlarm) {
+            Intent i = new Intent(HappyMeter.this, NumAlarms.class);
+            startActivity(i);
             return true;
         }
 

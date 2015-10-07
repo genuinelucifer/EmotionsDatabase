@@ -55,6 +55,8 @@ public class MediaList extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_SetAlarm) {
+            Intent i = new Intent(MediaList.this, NumAlarms.class);
+            startActivity(i);
             return true;
         }
 

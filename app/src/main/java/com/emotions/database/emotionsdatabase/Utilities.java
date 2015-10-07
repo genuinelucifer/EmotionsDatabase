@@ -1,8 +1,13 @@
 package com.emotions.database.emotionsdatabase;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.preference.PreferenceManager;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Some Utility functions and also a common point to coordinate data transfer between activities
@@ -81,5 +86,55 @@ public class Utilities {
         return aNetInfo != null && aNetInfo.isAvailable();
     }
 
+    public static final String NUM_ALARMS_PREF_KEY = "NUM_ALARMS_PREFERENCE";
+    public static int getPrefInt(Context ctx, String prefKey)
+    {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ctx.getApplicationContext());
+        return sp.getInt(prefKey, -1);
+    }
+    public static void savePrefInt(Context ctx, String prefKey, int prefValue)
+    {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ctx.getApplicationContext());
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt(prefKey, prefValue);
+        editor.apply();
+    }
+
+    public static void storeNumAlarms(int numAlarm, Context ctx)
+    {
+        savePrefInt(ctx, NUM_ALARMS_PREF_KEY, numAlarm);
+    }
+    public static int getNumAlarms(Context ctx)
+    {
+        return getPrefInt(ctx, NUM_ALARMS_PREF_KEY);
+    }
+    public static long getNextMinForAlarm(Context ctx)
+    {
+        int numAlarms = getNumAlarms(ctx);
+        // time at which alarm will be scheduled here alarm is scheduled at 1 day from current time,
+        // we fetch  the current time in milliseconds and added 1 day time
+        // i.e. 24*60*60*1000= 86,400,000   milliseconds in a day
+        Calendar cal = new GregorianCalendar();
+        int h = cal.get(Calendar.HOUR_OF_DAY), m = cal.get(Calendar.MINUTE);
+        int tot = 12 * 60;
+        int diff = 0, alt = 0;
+        if(numAlarms>1)
+            diff = tot/(numAlarms-1);
+        int curh = 9, curm = 0;
+        for(int i=0;i<numAlarms;++i)
+        {
+            if(h<curh || (h==curh && m<curm))
+            {
+                alt = (curh-h)*60 + curm-m;
+                break;
+            }
+            curm += diff;
+            curh += curm/60;
+            curm %= 60;
+        }
+        if(alt==0 && numAlarms>=1)
+            alt = (23-h)*60 + (60-m) + 9*60;
+        return alt;
+    }
 
 }
